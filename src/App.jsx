@@ -1,6 +1,8 @@
 import React from 'react';
-import './index.css'; // Ensure this CSS file is imported
+import './index.css';
 import { motion } from "motion/react";
+import.meta.env.BASE_URL;
+
 
 function App() {
   const [expanded, setExpanded] = React.useState(false);
@@ -14,33 +16,29 @@ function App() {
 
             {/* Div Block #1 - Change State*/}
             <motion.div 
-              className={`cursor-pointer rounded-2xl shadow-md overflow-hidden bg-cover ${expanded ? 'md:row-span-3' : 'md:row-span-1'} ${expanded ? "bg-[url('/1.1.svg')]" : "bg-[url('/1.svg')]"}`}
+              className={`cursor-pointer rounded-2xl shadow-md overflow-hidden bg-cover ${expanded ? 'md:row-span-3' : 'md:row-span-1'} ${expanded ? `bg-[url('${import.meta.env.BASE_URL}1.1.svg')]` : `bg-[url('${import.meta.env.BASE_URL}1.svg')]`}`}
               onClick={() => setExpanded(!expanded)} 
               layout
               transition={{ duration: 0.2, ease: "easeInOut" }}
             >
             </motion.div>
 
-            
-            
             {/* Div Block #2 - Static */}
-            <div className="p-12 bg-[url('/2.svg')] bg-cover rounded-2xl shadow-md">
-              
+            <div className={`p-12 bg-[url('${import.meta.env.BASE_URL}2.svg')] bg-cover rounded-2xl shadow-md`}>
             </div>
             
             {/* Div Block #3 - Change State*/}
             <motion.div
-              className={`cursor-pointer rounded-2xl shadow-md overflow-hidden bg-cover ${expanded2 ? 'md:row-span-3' : 'md:row-span-1'} ${expanded2 ? "bg-[url('/3.svg')]" : "bg-[url('/3.1.png')]"}`}
+              className={`cursor-pointer rounded-2xl shadow-md overflow-hidden bg-cover ${expanded2 ? 'md:row-span-3' : 'md:row-span-1'} ${expanded2 ? `bg-[url('${import.meta.env.BASE_URL}3.svg')]` : `bg-[url('${import.meta.env.BASE_URL}3.1.png')]`}`}
               onClick={() => setExpanded2(!expanded2)} 
               layout
               transition={{ duration: 0.2, ease: "easeInOut" }}
             >
-              
             </motion.div>
 
             {/* Div Block #4 - Change State */}
             <motion.div
-              className={`p-6 bg-[url('/Frame.png')] bg-cover rounded-2xl shadow-md ${expanded ? 'md:row-span-1 md:col-start-1 md:row-start-4' : 'md:row-span-3'} ${expanded ? "bg-[url('/4.1.svg')]" : "bg-[url('/Frame.png')]"}`}
+              className={`p-6 bg-cover rounded-2xl shadow-md ${expanded ? 'md:row-span-1 md:col-start-1 md:row-start-4' : 'md:row-span-3'} ${expanded ? `bg-[url('${import.meta.env.BASE_URL}4.1.svg')]` : `bg-[url('${import.meta.env.BASE_URL}Frame.png')]`}`}
               onClick={() => setExpanded(!expanded)} 
               layout
               transition={{ duration: 0.2, ease: "easeInOut" }}
@@ -48,24 +46,21 @@ function App() {
             </motion.div>
 
             {/* Div Block #5 - Static */}
-            <div className="p-6 bg-[url('5.svg')] bg-cover  rounded-2xl shadow-md md:row-span-2">
-              
+            <div className={`p-6 bg-[url('${import.meta.env.BASE_URL}5.svg')] bg-cover rounded-2xl shadow-md md:row-span-2`}>
             </div>
 
             {/* Div Block #6 - Static */}
-            <div className="p-6 bg-[url('6.svg')] bg-cover rounded-2xl shadow-md md:row-start-4 md:col-start-2">
-              
+            <div className={`p-6 bg-[url('${import.meta.env.BASE_URL}6.svg')] bg-cover rounded-2xl shadow-md md:row-start-4 md:col-start-2`}>
             </div>
 
             {/* Div Block #7 - Change State */}
             <motion.div 
-              className={`p-6 bg-[url('/Frame.png')] bg-cover rounded-2xl shadow-md ${expanded2 ? 'md:row-span-1 md:col-start-3 md:row-start-4' : 'md:row-span-3'} ${expanded2 ? "bg-[url('/7.svg')]" : "bg-[url('/7.1.svg')]"}`}
+              className={`p-6 bg-cover rounded-2xl shadow-md ${expanded2 ? 'md:row-span-1 md:col-start-3 md:row-start-4' : 'md:row-span-3'} ${expanded2 ? `bg-[url('${import.meta.env.BASE_URL}7.svg')]` : `bg-[url('${import.meta.env.BASE_URL}7.1.svg')]`}`}
               onClick={() => setExpanded2(!expanded2)} 
               layout
               transition={{ duration: 0.2, ease: "easeInOut" }}
             >     
             </motion.div>
-
 
           </div>
         </div>
